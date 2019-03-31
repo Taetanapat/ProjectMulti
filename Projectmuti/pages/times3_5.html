@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Kanit|Roboto" rel="stylesheet">
+    <title>นาฬิกามหัศจรรย์</title>
+</head>
+<style>
+    .bgImg {
+        background-image: url("../img/bg2.jpg");
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    title{
+        color: white;
+        background-color: #F1FF92;
+        box-shadow: 0 4px #9DA853;
+        color: black;
+    }
+    body,
+    html {
+        font-family: 'Kanit', sans-serif;
+        height: 100%;
+        margin: 0;
+    }
+    .hasBackground { margin: 0 0 1.5em; background-color: #eff0f1; display: inline-block;}
+</style>
+<script>
+
+    var count = 0
+    var score = 3
+    function answer1() {
+        if (document.getElementById("btn1")) {
+            count++
+            score--
+            alert("ตอบผิดนะ")
+        }
+        decreaseSocre()
+
+    }
+
+    function answer2() {
+        if (document.getElementById("btn2")) {
+            count++
+            score--
+            alert("ตอบผิดนะ")
+        }
+       decreaseSocre()
+
+    }
+    function answer3() {
+        if (document.getElementById("btn3")) {
+            count++
+            score--
+            alert("ตอบผิดนะ")
+        }
+        decreaseSocre()
+
+    }
+    function answer4() {
+        
+    if (document.getElementById("btn4")) {
+            document.getElementById("showScore").textContent = "คะแนนที่ได้ = " + score
+        }
+    }
+   
+    
+
+    function decreaseSocre() {
+        if (count === 1) {
+            document.getElementById("score").textContent = "Score = "+score
+        } else if (count === 2) {
+            document.getElementById("score").textContent = "Score = "+score
+        } else if (count === 3) {
+            document.getElementById("score").textContent = "Score = "+score
+            alert("ลองใหม่อีกครั้งนะ")
+            window.location.reload()
+        }
+    }
+
+    
+
+    function back() {
+        window.location.reload();
+    }
+
+    function go() {
+        window.location.href = "./gameover.html"
+    }
+
+</script>
+<style>
+    .card {
+        background-color: rgba(13, 245, 245, 0.4);
+    }
+</style>
+<iframe src="../sound/cutecat.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+</iframe> 
+<body>
+    <div class="bgImg">
+        <div class="container">
+            <br>
+            <div class="row">
+                <div class="col col-11">
+                    <h2 class="text-center text-white" >นาฬิกามหัศจรรย์</h2>
+                </div>
+                
+                <div class="col">
+                    <div class="row">
+                            <span id=score  class="hasBackground">score = 3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="col">
+                            <img src="../img/clock10.png" width="200px" height="200px">
+                        </div>
+                        <p class="text-center" >เวลากี่โมงครับเด็กๆ</p>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-success lg" id="btn1" onclick="answer1()" >21.30 น.</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-success lg" id="btn2" onclick="answer2()" >20.08 น.</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-success lg" id="btn3" onclick="answer3()">19.15 น.</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-success lg" id="btn4" onclick="answer4()" data-toggle="modal" data-target="#exampleModal">19.22 น.</button>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <div class="text-center">
+                <a href=" ./home.html"><img src="../img/home.png" width="50px" ></a>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="display:none"
+        id="showScroll">
+        Launch demo modal
+    </button>
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">คะแนนที่คุณได้ในข้อนี้คือ</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h1>ถูกต้อง !!</h1>
+                <p id="showScore" style="font-size: 40px"> </p>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="back()">
+                    <span class="icon">
+                        <i class="fas fa-arrow-left"></i>
+                    </span>
+                    <span>Back</span>
+                </button>
+                <button type="button" class="btn btn-primary" onclick="go()">
+                    <span>Next</span>
+                    <span class="icon">
+                        <i class="fas fa-arrow-right"></i>
+                    </span></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

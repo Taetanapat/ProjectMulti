@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../node_modules/bulma/css/bulma.css">
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <style>
+            .bgImg {
+                background-image: url("../img/bg2.jpg");
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .hasBackground { margin: 0 0 1.5em; background-color: #eff0f1; display: inline-block;}
+        
+            body,
+            html {
+                height: 100%;
+                margin: 0;
+            }
+        </style>
+
+    <title>โจทย์ปัญหา</title>
+    <script type="text/javascript">
+
+
+        var count = 0
+        var score = 3
+
+        function answer1() {
+            if (document.getElementById("number")) {
+                document.getElementById("showScore").textContent = "คะแนนที่ได้ = " + score
+            }
+        }
+
+        function answer2() {
+            if (document.getElementById("number1")) {
+                count++
+                score--
+                alert("ตอบผิดนะ")
+            }
+            decreaseScore()
+
+        }
+
+        function answer3() {
+            if (document.getElementById("number2")) {
+                count++
+                score--
+                alert("ตอบผิดนะ")
+            }
+            decreaseScore()
+
+
+        }
+        function answer4() {
+            if (document.getElementById("number3")) {
+                count++
+                score--
+                alert("ตอบผิดนะ")
+            }
+            decreaseScore()
+
+
+        }
+
+        function decreaseScore() {
+            if (count === 1) {
+                document.getElementById("score").textContent = "Score = "+score
+            } else if (count === 2) {
+                document.getElementById("score").textContent = "Score = "+score
+            } else if (count === 3) {
+                document.getElementById("score").textContent = "Score = "+score
+                alert("ลองใหม่อีกครั้งนะ")
+                window.location.reload()
+            }
+        }
+        function back() {
+            window.location.reload();
+        }
+
+        function go() {
+            window.location.href = "./p5.html"
+        }
+    </script>
+</head>
+<iframe src="../sound/minions.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+</iframe> 
+<body class="bgImg">
+    <br>
+    <div style="float: right;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span id=score class="hasBackground"
+        style="font-size: 28px">Score = 3 </span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="box">
+        <article class="media">
+            <div class="media-left">
+            </div>
+            <div class="media-content">
+                <div id="game" class="wrapper"></div>
+                <br>
+                <div class="buttons is-centered">
+                        <a class="button is-primary is-large"
+                        style="font-size: 40px">36</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="button is-white is-large"
+                        style="font-size: 40px">÷</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="button is-primary is-large is-outlined"
+                        style="font-size: 40px">?</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="button is-white is-large"
+                        style="font-size: 40px">=</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="button is-primary is-large" style="font-size: 40px">6</a>
+                </div>
+                <br>
+
+                <div class="buttons is-centered">
+                    
+
+                    <a id="number1" onclick="answer2()" class="button is-primary is-large"
+                        style="font-size: 40px">3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        
+                    <a id="number2" onclick="answer3()" class="button is-primary is-large"
+                        style="font-size: 40px">8</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a  class="button is-primary is-large" data-toggle="modal" data-target="#exampleModal"
+                        id="number" onclick="answer1()" style=" font-size: 40px">
+                        6
+                    </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a id="number3" onclick="answer4()" class="button is-primary is-large"
+                        style="font-size: 40px">4</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        
+                </div>
+            </div>
+        </article>
+    </div>
+    <div class="text-center">
+            <a href=" ./home.html" class="button is-info is-large"><img src="../img/home.png" width="50px"></a>
+        </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">คะแนนที่คุณได้ในข้อนี้คือ</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h1>ถูกต้อง !!</h1>
+                    <p id="showScore" style="font-size: 40px"> </p>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="back()">
+                        <span class="icon">
+                            <i class="fas fa-arrow-left"></i>
+                        </span>
+                        <span>Back</span>
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="go()">
+                        <span>Next</span>
+                        <span class="icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

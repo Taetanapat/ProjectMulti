@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bulma/css/bulma.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Kanit|Roboto" rel="stylesheet">
+    <title>เรขาคณิตมหาสนุก</title>
+</head>
+<style>
+    .bgImg {
+        background-image: url("../img/bg2.jpg");
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    title {
+        color: white;
+        background-color: #F1FF92;
+        box-shadow: 0 4px #9DA853;
+        color: black;
+    }
+
+    body,
+    html {
+        font-family: 'Kanit', sans-serif;
+        height: 100%;
+        margin: 0;
+    }
+    .modal-backdrop {
+  z-index: -1;
+}
+</style>
+<script>
+    var circle = 0
+    var square = 23
+    var triangle = 0
+
+
+    var cir
+    var squ
+    var tri
+
+    var count = 0
+    var score = 3
+    function checkAnswer() {
+        cir = document.getElementById("circle").value;
+        squ = document.getElementById("square").value;
+        tri = document.getElementById("triangle").value;
+
+        if (checkSquare() && checkCircle() && checkTriangle()) {
+
+            openModal();
+
+        } else {
+            count++
+            score--
+            decreaseScore()
+        }
+
+    }
+    function checkCircle() {
+        if (cir == circle) {
+            return true;
+        } else {
+            alert("จำนวนวงกลมไม่ถูกต้อง");
+            return false;
+        }
+    }
+
+    function checkSquare() {
+        if (squ == square) {
+            return true;
+        } else {
+            alert("จำนวนสี่เหลี่ยมไม่ถูกต้อง ");
+            return false;
+        }
+    }
+    function checkTriangle() {
+        if (tri == triangle) {
+            return true;
+        } else {
+            alert("จำนวนสามเหลี่ยมไม่ถูกต้อง");
+            return false;
+        }
+    }
+
+
+    function openModal() {
+        document.getElementById("showScore").textContent = "คะแนนที่ได้ = " + score
+        $(document).ready(function () {
+            // Show the Modal on load
+            $("#exampleModal").modal("show");
+
+            
+
+            // Hide the Modal
+
+        });
+    }
+    function decreaseScore() {
+        if (count === 1) {
+            document.getElementById("score").textContent = "Score = " + score
+        } else if (count === 2) {
+            document.getElementById("score").textContent = "Score = " + score
+        } else if (count === 3) {
+            document.getElementById("score").textContent = "Score = " + score
+            alert("ลองใหม่อีกครั้งนะ")
+            window.location.reload()
+        }
+    }
+
+
+
+    function back() {
+        window.location.reload();
+    }
+
+    function go() {
+        window.location.href = "./gameover.html"
+    }
+
+</script>
+<iframe src="../sound/dora.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+</iframe> 
+<body>
+    <div class="bgImg">
+        <div class="container">
+            <br>
+            <div class="row">
+                <div class="col col-10">
+                        <div class="box"> <h1 class="text-center ">เรขาคณิตมหาสนุก</h1></div>
+                </div>
+                <div class="col">
+                    <div class="row">
+
+
+                        <div class="box">
+
+                            <p id="score"> Score = 3</p>
+
+                        </div>
+                        <br>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="col">
+                            <img src="../img/Page 5.jpg" width="500px" height="450px">
+                        </div>
+                        <p class="text-center">ดูรูป และพิจารณาว่า มีจำนวนเรขาคณิตทั้งหมดเท่าไหร่</p>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            มีวงกลมทั้งหมด
+                            <select id="circle">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            มีสี่เหลี่ยมทั้งหมด
+                            <select id="square">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            มีสามเหลี่ยมทั้งหมด
+                            <select id="triangle">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-outline-primary lg" id="btn4" onclick="checkAnswer()">ยืนยัน</button>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <div class="text-center">
+                <a href=" ./home.html"><img src="../img/home.png" width="50px"></a>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-size: 40px">จบเกม</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h1>ถูกต้อง !!</h1>
+                <p id="showScore" style="font-size: 40px"> </p>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="back()">
+                    <span class="icon">
+                        <i class="fas fa-arrow-left"></i>
+                    </span>
+                    <span>Back</span>
+                </button>
+                <button type="button" class="btn btn-primary" onclick="go()">
+                    <span>Next</span>
+                    <span class="icon">
+                        <i class="fas fa-arrow-right"></i>
+                    </span></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
